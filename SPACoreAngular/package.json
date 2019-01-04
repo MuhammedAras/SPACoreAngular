@@ -1,0 +1,37 @@
+{
+  "version": "1.0.0",
+  "name": "asp.net",
+  "private": true,
+  "dependencies": {
+    "@angular/common": "^6.1.10",
+    "@angular/compiler": "^6.1.10",
+    "@angular/core": "^6.1.10",
+    "@angular/forms": "^6.1.10",
+    "@angular/http": "^6.1.10",
+    "@angular/platform-browser": "^6.1.10",
+    "@angular/platform-browser-dynamic": "^6.1.10",
+    "@angular/router": "^6.1.10",
+    "@angular/upgrade": "^6.1.10",
+    "bootstrap": "^4.2.1",
+    "core-js": "^2.6.1",
+    "reflect-metadata": "^0.1.12",
+    "rxjs": "^6.3.3",
+    "systemjs": "^0.21.5",
+    "zone.js": "^0.8.26"
+  },
+  "devDependencies": {
+    "@types/core-js": "^0.9.46",
+    "@types/node": "^10.0.4",
+    "concurrently": "^3.5.1",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-cssmin": "^0.2.0",
+    "gulp-htmlclean": "^2.7.20",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^3.0.0",
+    "json-server": "^0.12.2",
+    "rimraf": "^2.6.3",
+    "typescript": "^2.9.2",
+    "typings": "^2.1.1"
+  }
+}

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
@@ -24,11 +25,24 @@ namespace SPACoreAngular
             {
                 app.UseDeveloperExceptionPage();
             }
-
-            app.Run(async (context) =>
+            app.Use(async (context, next) =>
             {
-                await context.Response.WriteAsync("Hello World!");
+                await next();
+                if (context.Response.StatusCode == 404 && !Path.HasExtension(context.Request.Path.Value))
+                {
+                    context.Request.Path = "/index.html";
+                    context.Response.StatusCode = 200;
+                    await next();
+                }
             });
+
+            DefaultFilesOptions options = new DefaultFilesOptions();
+            options.DefaultFileNames.Clear();
+            options.DefaultFileNames.Add("/index.html");
+            app.UseDefaultFiles(options);
+            app.UseStaticFiles();
+            app.UseFileServer(enableDirectoryBrowsing: false);
+            app.UseMvc();
         }
     }
 }
