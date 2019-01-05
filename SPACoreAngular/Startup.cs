@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using SPACoreAngular.serverapp.models;
 
 namespace SPACoreAngular
 {
@@ -16,6 +18,8 @@ namespace SPACoreAngular
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            var connection = @"Server=LENOVO;Database=SPACoreAngular;Trusted_Connection=True;";
+            services.AddDbContext<SPACoreAngularContext>(options => options.UseSqlServer(connection));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -41,8 +45,10 @@ namespace SPACoreAngular
             options.DefaultFileNames.Add("/index.html");
             app.UseDefaultFiles(options);
             app.UseStaticFiles();
-            app.UseFileServer(enableDirectoryBrowsing: false);
-            app.UseMvc();
+            //app.UseFileServer(enableDirectoryBrowsing: false);
+            //app.UseMvc();
+
+            //Database Connection
         }
     }
 }
