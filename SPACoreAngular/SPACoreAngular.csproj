@@ -8,6 +8,8 @@
   <ItemGroup>
     <None Remove="clientapp\component\app\component.ts" />
     <None Remove="clientapp\component\main.ts" />
+    <None Remove="clientapp\component\user\model.ts" />
+    <None Remove="clientapp\component\user\service.ts" />
     <None Remove="clientapp\module.ts" />
   </ItemGroup>
 
@@ -28,7 +30,6 @@
   <ItemGroup>
     <Folder Include="clientapp\component\about\" />
     <Folder Include="clientapp\component\home\" />
-    <Folder Include="clientapp\component\user\" />
     <Folder Include="wwwroot\app\component\about\" />
     <Folder Include="wwwroot\app\component\home\" />
     <Folder Include="wwwroot\app\component\app\" />
@@ -37,6 +38,8 @@
 
   <ItemGroup>
     <TypeScriptCompile Include="clientapp\component\app\component.ts" />
+    <TypeScriptCompile Include="clientapp\component\user\model.ts" />
+    <TypeScriptCompile Include="clientapp\component\user\service.ts" />
     <TypeScriptCompile Include="clientapp\main.ts" />
     <TypeScriptCompile Include="clientapp\module.ts" />
   </ItemGroup>
